@@ -1,6 +1,18 @@
 import { useEffect, useRef } from 'react'
 import { skills, tools } from '../data/projects'
 
+// skill icons using devicons CDN
+const skillIcons = {
+  'HTML & CSS':       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+  'JavaScript':       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  'React.js':         'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  'Tailwind CSS':     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+  'Redux Toolkit':    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
+  'Git & GitHub':     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+  'MUI (Material UI)':'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg',
+  'Context API':      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+}
+
 function SkillBar({ name, level }) {
   const fillRef = useRef(null)
 
@@ -14,23 +26,34 @@ function SkillBar({ name, level }) {
       },
       { threshold: 0.3 }
     )
-
-    // observe the track element (parent of fill)
-    if (fillRef.current) {
-      observer.observe(fillRef.current.parentElement)
-    }
-
+    if (fillRef.current) observer.observe(fillRef.current.parentElement)
     return () => observer.disconnect()
   }, [level])
 
   return (
-    <div>
-      <div className="flex justify-between mb-2">
-        <span className="font-body font-medium text-sm text-charcoal">{name}</span>
-        <span className="font-body text-sm text-muted">{level}%</span>
+    <div className="flex items-center gap-3">
+      {/* icon */}
+      <div
+        className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center"
+        style={{ backgroundColor: '#F0EAE0' }}
+      >
+        <img
+          src={skillIcons[name]}
+          alt={name}
+          className="w-5 h-5 object-contain"
+          onError={(e) => { e.target.style.display = 'none' }}
+        />
       </div>
-      <div className="h-2 rounded-full bg-border">
-        <div ref={fillRef} className="skill-bar-fill" />
+
+      {/* bar + label */}
+      <div className="flex-1">
+        <div className="flex justify-between mb-1.5">
+          <span className="font-body font-medium text-sm text-charcoal">{name}</span>
+          <span className="font-body text-xs text-muted">{level}%</span>
+        </div>
+        <div className="h-2 rounded-full bg-border">
+          <div ref={fillRef} className="skill-bar-fill" />
+        </div>
       </div>
     </div>
   )
@@ -48,7 +71,7 @@ export default function Skills() {
           </h2>
         </div>
 
-        <div className="animate-on-scroll grid sm:grid-cols-2 gap-x-16 gap-y-8 max-w-3xl mx-auto">
+        <div className="animate-on-scroll grid sm:grid-cols-2 gap-x-12 gap-y-6 max-w-3xl mx-auto">
           {skills.map((skill) => (
             <SkillBar key={skill.name} name={skill.name} level={skill.level} />
           ))}
