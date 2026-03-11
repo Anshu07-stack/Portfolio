@@ -32,7 +32,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/anshukumar"
+            href="https://www.linkedin.com/in/anshu-kumar-829658315/"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 font-body text-sm text-charcoal hover:opacity-60 transition-opacity"
