@@ -18,16 +18,13 @@ export default function About() {
             </h2>
             <div className="space-y-4 font-body leading-relaxed" style={{ color: '#444' }}>
               <p>
-                I'm a final-year B.Sc IT student with a genuine interest in frontend development.
-                I started building things for the web out of curiosity, and now I can't stop.
+                I'm Anshu Kumar, a B.Sc. IT graduate with a strong interest in frontend development. I enjoy building modern, responsive, and user-friendly web interfaces that turn ideas into real digital experiences.
               </p>
               <p>
-                I like clean UI, good typography, and code that's easy to read. I'm comfortable
-                with React, Tailwind, Redux Toolkit, and I'm always trying to level up my JavaScript.
+                My main focus is creating clean UI and writing maintainable code. I work primarily with React, JavaScript, Tailwind CSS, and Redux Toolkit to build interactive web applications.
               </p>
               <p>
-                When I'm not coding, I'm probably watching design breakdowns on YouTube that I
-                definitely don't need to watch — but watch anyway.
+                I’m always learning and improving my skills by building projects and exploring new frontend techniques. My goal is to grow as a developer while contributing to products that provide great user experiences.
               </p>
             </div>
           </div>
