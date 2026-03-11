@@ -66,8 +66,7 @@ export default function Contact() {
           </h2>
 
           <p className="font-body text-muted leading-relaxed max-w-md mx-auto text-sm sm:text-base">
-            Whether you have a project idea, want to collaborate, or just want to say hi —
-            I am always open. Reach out through any of these.
+            Whether you have a project idea, want to collaborate, or just want to say hi — I'm always open to new opportunities and conversations. Feel free to reach out.
           </p>
         </div>
 
